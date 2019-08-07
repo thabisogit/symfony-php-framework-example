@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
+    </head>
+    <body>
+        <div class="container">
+            <p>Hi {{ name }}! You have successfully sent the contact!!</p>  
+        </div>
+        
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block title %}Symfony Test{% endblock %}
+ 	
+ 	{% block body %}
+
+ 		{% if contacts %}
+<table id="contacts" class="table table-striped">
+	<thead>
+	<tr>
+		<th>Name</th>
+		<th>Action</th>
+	</tr>
+</thead>
+<tbody>
+	{% for contact in contacts %}
+	<tr>
+		<td>{{contact.title }}</td>
+		<td><a href="/contact/{{ contact.id }}" class="btn btn-dark">Show</a>
+		{% if app.user %}
+		<a href="/contact/edit/{{ contact.id }}" class="btn btn-light">Edit</a>
+		<a href="#" class="btn btn-danger delete-contact" data-id="{{ contact.id }}">Delete</a></td>
+		{% endif %}
+	</tr>
+	{% endfor %}
+</tbody>
+</table>
+{% else %}
+	<p>No Articles Found</p>
+{% endif %}
+ 	{% endblock %}
+
+ 	{% block javascripts %}
+	<script src="/js/main.js"></script>
+	{% endblock %}
